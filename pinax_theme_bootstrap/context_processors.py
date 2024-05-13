@@ -9,7 +9,7 @@ def theme(request):
         "THEME_CONTACT_EMAIL": settings.THEME_CONTACT_EMAIL,
     }
 
-    if Site._meta.installed:
+    if Site._meta.app_config:
         site = Site.objects.get_current(request)
         ctx.update({
             "SITE_NAME": site.name,
